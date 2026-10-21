@@ -25,7 +25,7 @@ luau-analyze src/GroundProbe.luau tests/run.luau
 luau-compile studio/Observer.luau studio/CreateTestScene.server.luau studio/Observe.client.luau > /dev/null
 ```
 
-These commands were run locally using official Luau 0.743 on 2026-10-21. CI is provided but has not run remotely as of this validation. Compilation is not a Studio API/physics test.
+These commands were run locally using official Luau 0.743 on 2026-10-21. On the same date, [GitHub Actions](https://github.com/mizuho-Te/roblox-ground-probe-kit/actions/runs/39575296068) passed all 443 pure Luau assertions, static analysis and syntax compilation of the Studio scripts. This CI does not run Roblox Studio or engine physics. Compilation is not a Studio API/physics test.
 
 ## Pure API
 
