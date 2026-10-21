@@ -9,7 +9,7 @@ MIT ライセンス。Copyright (c) 2026 mizuho-Te。[LICENSE](LICENSE) を参�
 ## できること
 
 - 距離・法線・上向き速度・必要ヒット数を設定して判定する純粋 Luau モジュール。
-- 合成フレームの記録再生と境界テスト。実際の公式 Luau 0.743 で 443 assertions 成功。
+- 合成フレームの記録再生と境界テスト。実際の公式 Luau 0.743 で 443 assertions 成功。 2026-10-21 の [GitHub Actions](https://github.com/mizuho-Te/roblox-ground-probe-kit/actions/runs/39575296068) でも 443 件、静的解析、Studio スクリプトの構文コンパイルが成功しました。CI では Studio 本体や物理検証は実行していません。
 - Studio 用 Raycast 観測サンプル、平地・坂・段差・端・ジャンプの練習用シーン生成スクリプト。
 
 万能な接地判定、不正検出、キック・BAN、ゲームの物理修正ではありません。既存ゲームのコード・キャラクター・非公開データは使用していません。
