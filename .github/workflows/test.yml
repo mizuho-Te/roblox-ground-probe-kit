@@ -1,0 +1,21 @@
+name: Pure Luau tests (not Studio)
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  pure-luau:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned official Luau CLI
+        run: |
+          curl --fail --location --retry 3 https://github.com/luau-lang/luau/releases/download/0.743/luau-ubuntu.zip -o /tmp/luau.zip
+          echo '99d45afb4afaee00ba631c526c8e8c76c67b60f6f119953ce6409be6d6953663  /tmp/luau.zip' | sha256sum --check
+          mkdir /tmp/luau
+          unzip /tmp/luau.zip -d /tmp/luau
+          chmod +x /tmp/luau/luau*
+      - name: Run synthetic tests and pure-module type analysis
+        run: |
+          /tmp/luau/luau tests/run.luau
+          /tmp/luau/luau-analyze src/GroundProbe.luau tests/run.luau
+          /tmp/luau/luau-compile studio/*.luau > /dev/null
