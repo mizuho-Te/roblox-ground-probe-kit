@@ -9,7 +9,7 @@ Downloaded archive SHA-256: 99d45afb4afaee00ba631c526c8e8c76c67b60f6f119953ce640
 - `luau-analyze src/GroundProbe.luau tests/run.luau`: exit 0, no diagnostics.
 - `luau-compile studio/*.luau`: exit 0. Syntax compilation only; Roblox globals/API availability NOT checked.
 - Tests cover distance/slope/rise boundaries, missing hits/unknown coverage, malformed numeric inputs, probe counts, synthetic replay and 402 sweep assertions.
-- CLI fixtures remain synthetic, not real player recordings. No remote CI run yet. The separate limited Studio observation below does not turn these CLI assertions into physics tests.
+- CLI fixtures remain synthetic, not real player recordings. [GitHub Actions](https://github.com/mizuho-Te/roblox-ground-probe-kit/actions/runs/39575296068) also passed on 2026-10-21: 443 pure Luau assertions, static analysis and Studio-script syntax compilation. Commit: `cdde75ec5003841164ea57baab41d4bb56daa361`. This CI does not execute Studio or engine physics. The separate limited Studio observation below does not turn these CLI assertions into physics tests.
 
 ## Studio observation appendix (2026-10-21)
 
